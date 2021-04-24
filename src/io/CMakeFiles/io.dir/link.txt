@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libio.a  CMakeFiles/io.dir/load_data_from_disk.cc.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libio.a
