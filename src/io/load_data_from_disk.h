@@ -26,6 +26,7 @@ class LoadData : public IO{
   void load_all_hash_data();
   void load_minibatch_data(int num);
   void load_mibibatch_hash_data(int num);
+  void load_all_hash_fdata();
   void load_minibatch_hash_data_fread();
   void load_minibatch_hash_data(int num);
  private:
