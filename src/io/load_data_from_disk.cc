@@ -56,6 +56,29 @@ void LoadData::load_minibatch_data(int num) {
   }
 }
 
+void LoadData::load_minibatch_hash_data(int num){
+  kv keyval;
+  std::vector<kv> sample;
+  m_data.fea_matrix.clear();
+  for (int i = 0; i < num; ++i) {
+    std::getline(fin_, line);
+    if (fin_.eof()) break;
+    sample.clear();
+    const char *pline = line.c_str();
+    if (sscanf(pline, "%f%n", &y, &nchar) >= 1) {
+      pline += nchar;
+      m_data.label.push_back(y);
+      while (sscanf(pline, "%d:%ld:%d%n", &fgid, &fid, &val, &nchar) >= 3) {
+        pline += nchar;
+        keyval.fgid = fgid;
+        keyval.fid = h(std::to_string(fid)+ ":" + std::to_string(val));
+        sample.push_back(keyval);
+      }
+    }
+    m_data.fea_matrix.push_back(sample);
+  }
+}
+
 void LoadData::load_all_hash_data() {
   kv keyval;
   std::vector<kv> sample;

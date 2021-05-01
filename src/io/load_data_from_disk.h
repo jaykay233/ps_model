@@ -27,6 +27,7 @@ class LoadData : public IO{
   void load_minibatch_data(int num);
   void load_mibibatch_hash_data(int num);
   void load_minibatch_hash_data_fread();
+  void load_minibatch_hash_data(int num);
  private:
   std::vector<char> buf;
  public:
