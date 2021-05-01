@@ -13,7 +13,7 @@
 
 namespace xflow {
 int w_dim = 1;
-int v_dim = 10;
+int v_dim = 20;
 float alpha = 5e-2;
 float beta = 1.0;
 float lambda1 = 5e-5;

@@ -71,7 +71,7 @@ class FFMWorker{
             const char *test_file_path;
             char train_data_path[1024];
             char test_data_path[1024];
-            int v_dim_ = 30;
+            int v_dim_ = 20;
             int f_dim_ = 20;
             int e_dim_ = 1;
             ps::KVWorker<float>* kv_w;
