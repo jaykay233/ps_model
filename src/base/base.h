@@ -72,6 +72,12 @@ class Base{
     return a.fid < b.fid;
   }
 
+  static bool field_sort_finder(const sample_key& a, const sample_key& b){
+      if(a.fid < b.fid) return true;
+      if(a.fid == b.fid) return a.fgid < b.fgid;
+      return false;
+  }
+
   static bool unique_finder(const sample_key& a, const sample_key& b) {
     return a.fid == b.fid;
   }
